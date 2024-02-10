@@ -99,50 +99,45 @@ Construct a program that swaps the values of variables <code>x</code> and <code>
 })();
 </script>
 
-## Parsons 3 (Unit Test Grader)
+## Exercise 3 (Calculate Pay)
 Your task is to construct a function which returns the index of the largest element in the array.
 
-<div id="p3-sortableTrash" class="sortable-code"></div>
-<div id="p3-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p3-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p3-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
+<div id="sequence_ex3-sortableTrash" class="sortable-code"></div> 
+<div id="sequence_ex3-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="sequence_ex3-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="sequence_ex3-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
 (function(){
-  var initial = "def maxindex(arg):\n" +
-    " ans = 0\n" +
-    " for i in range(len(arg)):\n" +
-    " if arg[i] > arg[ans]:\n" +
-    " ans = i\n" +
-    " while True:\n" +
-    "pass\n" +
-    " return ans";
+  var initial = "BEGIN\n" +
+    "    INPUT hours\n" +
+    "    CALCULATE pay = hours * 15 + 100\n" +
+    "    OUTPUT pay\n" +
+    "END";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p3-sortable",
+    "sortableId": "sequence_ex3-sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.UnitTestGrader,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p3-sortableTrash",
-    "unittests": "import unittestparson\nclass myTests(unittestparson.unittest):\n  def test_0(self):\n    self.assertEqual(,,)\n_test_result = myTests().main()"
+    "show_feedback": true
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p3-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p3-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#sequence_ex3-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#sequence_ex3-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
-
 ## Parsons 4 (Language Translation Grader)
 Print out "I am a Java program" three times using a for loop.
 
